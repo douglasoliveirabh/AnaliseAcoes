@@ -5,24 +5,15 @@ using AnaliseAcoes.Domain.Entities;
 using HtmlAgilityPack;
 
 namespace AnaliseAcoes.Scrapper.Scrappers{
-    public class AtivosScrapper : IScrapper<Ativo>
-    {
-        public HtmlDocument DocumentToScrape { get; private set; }
+    public class AtivosScrapper : ScrapperBase, IScrapper<Ativo>
+    {        
 
-
-        public AtivosScrapper(Stream htmlStream)
-        {                    
-            this.DocumentToScrape = new HtmlDocument();
-            this.DocumentToScrape.Load(htmlStream);
+        public AtivosScrapper(string html) : base(html){
+            
         }
-
 
         public IEnumerable<Ativo> ExecuteScrap()
         {
-
-
-
-
             throw new NotImplementedException();
         }
     }
