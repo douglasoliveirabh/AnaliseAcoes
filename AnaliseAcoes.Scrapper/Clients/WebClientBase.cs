@@ -12,7 +12,7 @@ namespace AnaliseAcoes.Scrapper.Clients{
             this.Client = new HttpClient();            
         }
 
-        public abstract Task<string> GetHtmlStringAsync(string url);
+        public abstract Task<string> GetHtmlStringAsync();
 
     }
 
