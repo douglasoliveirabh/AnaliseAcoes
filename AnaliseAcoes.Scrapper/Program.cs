@@ -1,4 +1,5 @@
 ﻿using System;
+using AnaliseAcoes.Scrapper.Scrappers;
 
 namespace AnaliseAcoes.Scrapper
 {
@@ -6,11 +7,11 @@ namespace AnaliseAcoes.Scrapper
     {
         static void Main(string[] args)
         {   
-            var opcao = args.Length > 0 ?  args[0] : "";
+            var opcao = args.Length > 0 ?  args[0] : "ativos";
 
             switch(opcao){
-                case "acoes":
-                    Console.WriteLine(opcao);                
+                case "ativos":
+                    AtivosApplication.LoadAtivosAsync();            
                     break;
                 case "analises":
                     Console.WriteLine(opcao);

@@ -11,7 +11,8 @@ namespace AnaliseAcoes.Scrapper.Clients{
 
         public  Task<string> GetHtmlStringAsync(int page)
         {
-            return this.Client.GetStringAsync(string.Format(GET_ATIVOS_URL, page));            
+            var effectiveUrl = string.Format(GET_ATIVOS_URL, page);        
+            return this.Client.GetStringAsync(effectiveUrl);            
         }
 
         public override Task<string> GetHtmlStringAsync()

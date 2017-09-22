@@ -7,8 +7,6 @@ using AnaliseAcoes.Domain.Entities;
 namespace AnaliseAcoes.Scrapper.Scrappers{
 
     public class AtivosApplication {
-
-
             public static async void LoadAtivosAsync() {
                 var page = 1;
                 var itemsPerPage = 20;
