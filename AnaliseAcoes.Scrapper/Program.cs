@@ -22,6 +22,8 @@ namespace AnaliseAcoes.Scrapper
                     break;
             }
 
+            Console.ReadKey();
+
             
         }
     }
