@@ -8,7 +8,7 @@ using System.Net;
 
 namespace AnaliseAcoes.Scrapper.Scrappers
 {
-    public class AtivosScrapper : ScrapperBase, IScrapper<Ativo>
+    public class AtivosScrapper : ScrapperBase, IScrapper<IEnumerable<Ativo>>
     {
 
         public AtivosScrapper(string html) : base(html)
@@ -35,11 +35,7 @@ namespace AnaliseAcoes.Scrapper.Scrappers
                                              Decode(x.ParentNode.ParentNode.ChildNodes[3].InnerText));
                             
                         }).ToList();            
-        }
-
-        private string Decode(string htmlText) {
-            return WebUtility.HtmlDecode(htmlText).Trim();
-        }
+        }        
     }
 
 }

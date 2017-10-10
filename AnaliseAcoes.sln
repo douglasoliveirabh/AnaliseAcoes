@@ -1,12 +1,16 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.8
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnaliseAcoes.Scrapper", "AnaliseAcoes.Scrapper\AnaliseAcoes.Scrapper.csproj", "{2C6FC0C6-7CB3-4A94-8DDA-FC27B5CD3F62}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnaliseAcoes.Persistence", "AnaliseAcoes.Persistence\AnaliseAcoes.Persistence.csproj", "{EEC46353-D2E4-4091-BF11-3E6B2E7449A8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnaliseAcoes.Domain", "AnaliseAcoes.Domain\AnaliseAcoes.Domain.csproj", "{00A06135-D7EE-4542-AF88-47DDD41D8F4C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{65D87EC1-394C-4A76-B401-FF274EA8E597}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{DA2E4A4C-1344-414F-8A18-F4D7B905C11B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +61,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2C6FC0C6-7CB3-4A94-8DDA-FC27B5CD3F62} = {65D87EC1-394C-4A76-B401-FF274EA8E597}
+		{EEC46353-D2E4-4091-BF11-3E6B2E7449A8} = {65D87EC1-394C-4A76-B401-FF274EA8E597}
+		{00A06135-D7EE-4542-AF88-47DDD41D8F4C} = {65D87EC1-394C-4A76-B401-FF274EA8E597}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2BAE9313-4667-4039-BF04-FDEC8522132A}

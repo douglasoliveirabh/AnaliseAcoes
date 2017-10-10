@@ -1,4 +1,5 @@
 using HtmlAgilityPack;
+using System.Net;
 
 namespace AnaliseAcoes.Scrapper.Scrappers{
 
@@ -12,6 +13,11 @@ namespace AnaliseAcoes.Scrapper.Scrappers{
             this.DocumentToScrape.LoadHtml(html);
         }
 
+
+        protected string Decode(string htmlText)
+        {
+            return WebUtility.HtmlDecode(htmlText).Trim();
+        }
 
     }
 

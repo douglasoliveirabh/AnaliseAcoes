@@ -9,15 +9,15 @@ namespace AnaliseAcoes.Scrapper.Clients{
         public AtivosClient(){
         }
 
-        public  Task<string> GetHtmlStringAsync(int page)
+        public  Task<string> GetHtmlAsync(int page)
         {
             var effectiveUrl = string.Format(GET_ATIVOS_URL, page);        
-            return this.Client.GetStringAsync(effectiveUrl);            
+            return this.GetHtmlStringAsync(effectiveUrl);            
         }
 
-        public override Task<string> GetHtmlStringAsync()
+        public override Task<string> GetHtmlStringAsync(string url)
         {
-            return this.Client.GetStringAsync(GET_ATIVOS_URL);            
+            return this.Client.GetStringAsync(url);            
         }
     }
 
