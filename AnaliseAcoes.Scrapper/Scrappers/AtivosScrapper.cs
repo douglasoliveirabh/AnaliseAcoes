@@ -20,22 +20,25 @@ namespace AnaliseAcoes.Scrapper.Scrappers
         {
             var documentNode = this.DocumentToScrape.DocumentNode;
 
-            var descendants = documentNode.SelectNodes("//a[@id='hlNome']").ToList();
+            var descendants = documentNode.SelectNodes("//body//table[@id='ctl00_contentPlaceHolderConteudo_BuscaNomeEmpresa1_grdEmpresa_ctl01']//tr");
 
             return descendants
                         .ToList()
                         .Select(x =>
                         {
-                            Console.WriteLine(" Nome => " + Decode(x.InnerText) + "\n" +
-                                              " Sigla => " + Decode(x.ParentNode.ParentNode.ChildNodes[2].InnerText) + "\n" +
-                                              " Segmento => " + Decode(x.ParentNode.ParentNode.ChildNodes[3].InnerText) + "\n\n");
-                          
-                            return new Ativo(Decode(x.ParentNode.ParentNode.ChildNodes[2].InnerText),
-                                             Decode(x.InnerText),
-                                             Decode(x.ParentNode.ParentNode.ChildNodes[3].InnerText));
-                            
-                        }).ToList();            
-        }        
+
+                            var tds = x.SelectNodes("td");
+
+                            //td//a
+                            if (tds != null)
+                            {
+                                Console.WriteLine(" Razão Social => " + Decode(tds[0].SelectSingleNode("a").InnerText) + "\n" +
+                                                  " Nome Pregão => " + Decode(tds[1].SelectSingleNode("a").InnerText) + "\n" +
+                                                  " Segmento => " + Decode(tds[2].InnerText) + "\n\n");
+                            }
+                            return new Ativo("", "", "");
+                        }).ToList();
+        }
     }
 
 }

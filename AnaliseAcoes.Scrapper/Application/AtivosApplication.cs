@@ -10,6 +10,8 @@ namespace AnaliseAcoes.Scrapper.Scrappers
 
     public class AtivosApplication
     {
+        private AtivosClient client;
+
         public static async void LoadAtivosAsync()
         {
 
@@ -20,23 +22,22 @@ namespace AnaliseAcoes.Scrapper.Scrappers
                 var client = new AtivosClient();
                 var ativos = new List<Ativo>();
                 string[] args = {};
-                var dbContext = new AnaliseAcoesContextFactory().CreateDbContext(args);
+                //var dbContext = new AnaliseAcoesContextFactory().CreateDbContext(args);
 
-                do
-                {
+                /* do
+                {*/
                     var html = await client.GetHtmlAsync(page);
                     var scrapper = new AtivosScrapper(html);
                     ativos = scrapper.ExecuteScrap().ToList();
 
-                    dbContext.Ativos.AddRange(ativos);
-                    dbContext.SaveChanges();
-                    page++;
-                }
-                while (ativos.Count == itemsPerPage);
+                    //dbContext.Ativos.AddRange(ativos);
+                    //dbContext.SaveChanges();
+                    //page++;
+                /* }
+                while (ativos.Count == itemsPerPage);*/
             }
             catch (System.Exception ex)
-            {
-
+            {                
                 throw ex;
             }
 

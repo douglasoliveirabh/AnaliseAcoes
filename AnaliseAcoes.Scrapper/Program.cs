@@ -8,7 +8,7 @@ namespace AnaliseAcoes.Scrapper
     {
         static void Main(string[] args)
         {   
-            var opcao = args.Length > 0 ?  args[0] : "dados";
+            var opcao = args.Length > 0 ?  args[0] : "ativos";
 
             switch(opcao){
                 case "ativos":
@@ -24,7 +24,7 @@ namespace AnaliseAcoes.Scrapper
                     break;
             }
 
-            Console.ReadKey();
+            Console.Read();
 
             
         }
