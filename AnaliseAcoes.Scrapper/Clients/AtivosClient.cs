@@ -20,8 +20,7 @@ namespace AnaliseAcoes.Scrapper.Clients{
         }
 
         public override Task<string> GetHtmlStringAsync(string url)
-        {
-            var htmlString = "";
+        {            
             this.WebDriver.Navigate().GoToUrl(GET_ATIVOS_URL);
             IWebElement element = this.WebDriver.FindElement(By.Name("ctl00$contentPlaceHolderConteudo$BuscaNomeEmpresa1$btnTodas"));
             element.Click();      
